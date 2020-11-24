@@ -1,0 +1,3 @@
+Issued                Expires               Principal
+Nov 23 16:53:27 2020  Nov 24 02:53:27 2020  krbtgt/42MADRID.COM@42MADRID.COM
+Nov 23 16:53:27 2020  Nov 24 02:53:27 2020  HTTP/student-storage.42madrid.com@42
