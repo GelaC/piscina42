@@ -1,3 +1,5 @@
-Issued                Expires               Principal
-Nov 23 16:53:27 2020  Nov 24 02:53:27 2020  krbtgt/42MADRID.COM@42MADRID.COM
-Nov 23 16:53:27 2020  Nov 24 02:53:27 2020  HTTP/student-storage.42madrid.com@42
+Credentials cache: API:15907CBF-560B-42A2-BCDC-C05F143E0FC7
+        Principal: acebrian@42MADRID.COM
+
+  Issued                Expires               Principal
+Nov 25 20:48:58 2020  Nov 26 06:48:58 2020  krbtgt/42MADRID.COM@42MADRID.COM
