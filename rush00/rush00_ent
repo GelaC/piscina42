@@ -1,0 +1,55 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    rush00_ent                                         :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/11/29 17:45:42 by acebrian          #+#    #+#              #
+#    Updated: 2020/11/29 17:48:31 by acebrian         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#include <unistd.h>
+
+void	ft_putchar(char c);
+void	rush(int x, int y);
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+
+}
+void	rush(int x, int y)
+{
+	int lin;
+	int col;
+
+	lin = 1;
+	col = 1;
+	while (lin <= y)
+	{
+		while (col <= x)
+		{
+			if (lin == 1 || lin == y || col == 1 || col == x)
+				if (lin == 1 && (col == 1 || col == x))
+					ft_putchar('A');
+				else if (lin == y && (col == 1 || col == x))
+					ft_putchar('C');
+				else
+					ft_putchar('B');
+			else
+				ft_putchar(' ');
+			col++;
+		}
+		ft_putchar('\n');
+		lin++;
+		col = 1;
+	}
+}
+
+int	main(void)
+{
+	rush(1, 1);
+	return (0);
+}
