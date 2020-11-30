@@ -1,1 +1,1 @@
-id -Gn FT_USER | tr " " ","
+groups $FT_USER | tr " " ","
