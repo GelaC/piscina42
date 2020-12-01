@@ -6,26 +6,31 @@
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 10:20:27 by acebrian          #+#    #+#             */
-/*   Updated: 2020/11/28 10:32:03 by acebrian         ###   ########.fr       */
+/*   Updated: 2020/12/01 17:38:56 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <unistd.h>
 
-void    ft_print_alphabet(void)
+void	ft_putchar(char c)
 {
-    char primero;
-    
-    primero = 'a';
-
-    while (primero <= 'z')
-    {
-        write(1, &primero, 1);
-        primero++;
-    }
+	write(1, &c, 1);
 }
-int main(void)
+
+void	ft_print_alphabet(void)
 {
-    ft_print_alphabet();
+	char primero;
+	primero = 'a';
+	while (primero <= 'z')
+	{
+		ft_putchar(primero);
+		primero++;
+	}
+}
+
+int	main(void)
+{
+	ft_print_alphabet();
+	return (0);
 }

@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush00.c                                           :+:      :+:    :+:   */
+/*   rush02.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/28 17:20:30 by acebrian          #+#    #+#             */
-/*   Updated: 2020/11/30 11:06:02 by acebrian         ###   ########.fr       */
+/*   Created: 2020/11/29 19:48:47 by dagarcia          #+#    #+#             */
+/*   Updated: 2020/11/30 11:06:05 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 void	ft_putchar(char c);
 void	rush(int x, int y);
-void	error(int x, int y);
+
+void error(int x, int y)
+{
+	if (x == 0 || y == 0 || x < 0 || y < 0)
+	{
+		write(1, "\\\\\\ERROR\\\\\\\nNegative or null values of x and/or y\n", 57);
+	}
+}
+	
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	rush(int x, int y)
 {
@@ -21,7 +35,8 @@ void	rush(int x, int y)
 
 	lin = 1;
 	col = 1;
-	while (lin <= y)
+	error(x, y);
+		while (lin <= y && (x > 0 && y > 0))
 	{
 		while (col <= x)
 		{
@@ -42,8 +57,8 @@ void	rush(int x, int y)
 	}
 }
 
-void error(int x, int y)
+int	main(void)
 {
-	if (x == 0 || y == 0 || x < 0 || y < 0)
-		write(1, "\\\\\\ERROR\\\\\\\nNegative or null values of x and/or y\n", 57);
+	rush(0, 6);
+	return (0);
 }

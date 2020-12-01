@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_putchar1.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/28 10:53:04 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/01 18:16:18 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/01 18:08:52 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/01 18:10:33 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <unistd.h>
 
-void	ft_print_numbers(void)
+void	ft_putchr(void)
 {
-	char num;
+	char c;
 
-	num = '0';
-	while (num <='9')
-	{
-		write(1, &num, 1);
-		num++;
-	}
+	c = 'h';
+	write(1, &c, 1);
 }
+
 int	main(void)
 {
-	ft_print_numbers();
-	return (0);
+	ft_putchr();
 }

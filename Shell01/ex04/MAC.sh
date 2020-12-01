@@ -1,1 +1,1 @@
-ifconfig | grep "ether " | cut -c 8-30
+ifconfig | grep "ether " | awk 's/'

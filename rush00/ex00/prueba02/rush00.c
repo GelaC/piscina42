@@ -6,44 +6,54 @@
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 17:20:30 by acebrian          #+#    #+#             */
-/*   Updated: 2020/11/30 11:06:02 by acebrian         ###   ########.fr       */
+/*   Updated: 2020/11/30 11:06:22 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 void	rush(int x, int y);
-void	error(int x, int y);
+void	loop(int row, int col, int x, int y, int mirror);
 
-void	rush(int x, int y)
+void	loop(int row, int col, int x, int y, int mirror)
 {
-	int lin;
-	int col;
-
-	lin = 1;
-	col = 1;
-	while (lin <= y)
+	while (col <= x)
 	{
-		while (col <= x)
-		{
-			if (lin == 1 || lin == y || col == 1 || col == x)
-				if (lin == 1 && (col == 1 || col == x))
-					ft_putchar('A');
-				else if (lin == y && (col == 1 || col == x))
-					ft_putchar('C');
-				else
-					ft_putchar('B');
+		if (row == 1 || row == y || col == 1 || col == x)
+			if ((row == 1 && (col == 1 || col == x)) && (mirror == 0))
+				ft_putchar('A');
+			else if ((row == 1 && (col == 1 || col == x)) && (mirror == 1))
+				ft_putchar('C');
+			else if ((row == y && (col == 1 || col == x)) && (mirror == 0))
+				ft_putchar('C');
+			else if ((row == y && (col == 1 || col == x)) && (mirror == 1))
+				ft_putchar('A');
 			else
-				ft_putchar(' ');
-			col++;
-		}
-		ft_putchar('\n');
-		lin++;
-		col = 1;
+				ft_putchar('B');
+		else
+			ft_putchar(' ');
+		col++;
 	}
 }
 
-void error(int x, int y)
+void	rush(int x, int y)
 {
-	if (x == 0 || y == 0 || x < 0 || y < 0)
-		write(1, "\\\\\\ERROR\\\\\\\nNegative or null values of x and/or y\n", 57);
+	int row;
+	int col;
+	int mirror;
+
+	row = 1;
+	col = 1;
+	mirror = 0;
+	if (x < 0)
+		x = x * (-1);
+	else if (y < 0)
+		mirror = 1;
+		y = y * (-1);
+	while (row <= y && (x > 0 && y > 0))
+	{
+		loop(row, col, x, y, mirror);
+		ft_putchar('\n');
+		row++;
+		col = 1;
+	}
 }

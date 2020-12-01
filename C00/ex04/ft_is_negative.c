@@ -6,32 +6,26 @@
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 10:59:30 by acebrian          #+#    #+#             */
-/*   Updated: 2020/11/28 11:22:47 by acebrian         ###   ########.fr       */
+/*   Updated: 2020/12/01 20:18:22 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_is_negative(int n)
+void	ft_putchar(char c)
 {
-    char neg, pos;
-
-    neg = 'N';
-    pos = 'P';
-
-        if(n >= 0)
-        {
-            write(1, &pos, 1);
-        }
-
-        else
-        {
-            write(1, &neg, 1);
-        }
+	write(1, &c, 1);
 }
-int main(void)
+
+void	ft_is_negative(int n)
 {
-    int n;
-    n = -7;
-    ft_is_negative(n);
+	if (n >= 0)
+		ft_putchar('P');
+	else
+		ft_putchar('N');
+}
+
+int	main(void)
+{
+	ft_is_negative(-7);
 }

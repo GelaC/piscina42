@@ -5,16 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/28 17:16:22 by acebrian          #+#    #+#             */
-/*   Updated: 2020/11/29 17:36:31 by acebrian         ###   ########.fr       */
+/*   Created: 2020/11/29 21:07:39 by acebrian          #+#    #+#             */
+/*   Updated: 2020/11/30 11:05:58 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void    rush(int x, int y);
 
-void	rush(int x, int y);
-
-int	main(void)
+int main(void)
 {
-	rush(1, 1);
-	return (0);
+    rush(3, 5);
+    return(0);
 }
