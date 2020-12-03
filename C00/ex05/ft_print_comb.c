@@ -6,7 +6,7 @@
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 18:46:22 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/02 11:08:31 by acebrian         ###   ########.fr       */
+/*   Updated: 2020/12/03 12:20:04 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void	ft_print_comb(void)
 	char cent;
 
 	cent = '0';
-	while (cent <= '7')
+	while (cent <= '9')
 	{
 		dece = cent + 1;
-		while (dece <= '8')
+		while (dece <= '9')
 		{
 			unid = dece + 1;
 			while (unid <= '9')

@@ -6,7 +6,7 @@
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 10:59:30 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/02 11:08:22 by acebrian         ###   ########.fr       */
+/*   Updated: 2020/12/03 12:12:59 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	ft_is_negative(int n)
 
 int	main(void)
 {
-	ft_is_negative(-7);
+	ft_is_negative(0);
 }

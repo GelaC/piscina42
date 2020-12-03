@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar1.c                                      :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 18:08:52 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/02 11:47:17 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/01 18:11:59 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/03 11:25:05 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchr(void)
+void	ft_putchar(char c)
 {
-	char c;
-
-	c = 'h';
 	write(1, &c, 1);
 }
 
 int	main(void)
 {
-	ft_putchr();
+	ft_putchar('h');
+	return (0);
 }

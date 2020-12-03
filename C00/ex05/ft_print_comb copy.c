@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_comb copy.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/02 21:16:22 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/03 21:51:45 by acebrian         ###   ########.fr       */
+/*   Created: 2020/11/28 18:46:22 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/03 12:26:15 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,39 +17,44 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	ns_number(int xp)
+void	ft_put_tres_char(char c, char d, char e)
 {
-	int div;
-
-	div = 0;
-	while (xp > 10)
-	{
-		xp = xp / 10;
-		div = div * 10;
-	}
-	return (div);
+	ft_putchar(c);
+	ft_putchar(d);
+	ft_putchar(e);
 }
 
-void	ft_putnbr(int xp)
+void	ft_print_comb(void)
 {
-	char num;
-	int n2;
-	int div;
+	char unid;
+	char dece;
+	char cent;
 
-	div = ns_number(xp);
-
-	while (xp > 10)
+	cent = '0';
+	while (cent <= '9')
 	{
-		xp = xp / div;
-		num = '0' + n2;
-		ft_putchar(num);
-		div = div / 10;
+		dece = cent + 1;
+		while (dece <= '9')
+		{
+			unid = dece + 1;
+			while (unid <= '9')
+			{
+				ft_put_tres_char(cent, dece, unid);
+				if (!(cent == '7' && dece == '8' && unid == '9'))
+				{
+					ft_putchar(',');
+					ft_putchar(' ');
+				}
+				unid++;
+			}
+			dece++;
+		}
+		cent++;
 	}
-	num = '0' + xp;
-	ft_putchar(num);
 }
 
 int	main(void)
 {
-	ft_putnbr(398);
+	ft_print_comb();
+	return (0);
 }

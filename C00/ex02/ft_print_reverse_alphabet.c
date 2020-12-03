@@ -6,7 +6,7 @@
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 10:36:34 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/02 11:04:52 by acebrian         ###   ########.fr       */
+/*   Updated: 2020/12/03 11:58:47 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 void	ft_print_reverse_alphabet(void)
 {
-	char final
-	
+	char final;
+
 	final = 'z';
-	
-	while (final >='a')
+	while (final >= 'a')
 	{
 		write(1, &final, 1);
 		final--;
@@ -28,4 +27,5 @@ void	ft_print_reverse_alphabet(void)
 int	main(void)
 {
 	ft_print_reverse_alphabet();
+	return (0);
 }
