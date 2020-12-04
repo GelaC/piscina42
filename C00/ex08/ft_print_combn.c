@@ -1,49 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pelultima_cl.c                                     :+:      :+:    :+:   */
+/*   ft_print_combn.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 19:22:26 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/04 14:51:17 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/04 10:50:22 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/04 12:04:37 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ftputchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void	ft_print_combn(int n)
 {
-	if (nb == -2147483648)
+	char x;
+
+	while (n > 0 && n <= 9) 
 	{
-		ftputchar('-');
-		ftputchar('2');
-		ft_putnbr(147483648);
-	}
-	else
-	{
-		if (nb < 0)
+		if (n == 1)
 		{
-			ftputchar('-');
-			nb = -nb;
-		} 
-		if (nb < 10)
-			ftputchar(nb + '0');
+			x = 0;
+			while (x <= '9')
+			{
+				ft_putchar(x);
+				if (x != 9)
+				{
+					ft_putchar(',');
+					ft_putchar(' ');
+				}
+				x++;
+			}
+		}
+
 		else
 		{
-			ft_putnbr(nb / 10);
-			ft_putnbr(nb % 10);
+			/* code */
 		}
+
+		n--;
 	}
 }
 
 int	main(void)
 {
-	ft_putnbr(0);
+	ft_print_combn(1);
 	return (0);
 }

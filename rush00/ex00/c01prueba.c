@@ -1,49 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pelultima_cl.c                                     :+:      :+:    :+:   */
+/*   c01prueba.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 19:22:26 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/04 14:51:17 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/04 12:05:31 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/04 15:07:08 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ftputchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void    ft_ft(int *nbr)
 {
-	if (nb == -2147483648)
-	{
-		ftputchar('-');
-		ftputchar('2');
-		ft_putnbr(147483648);
-	}
-	else
-	{
-		if (nb < 0)
-		{
-			ftputchar('-');
-			nb = -nb;
-		} 
-		if (nb < 10)
-			ftputchar(nb + '0');
-		else
-		{
-			ft_putnbr(nb / 10);
-			ft_putnbr(nb % 10);
-		}
-	}
+    int c;
+    int n1;
+    int n2;
+    char l1;
+    char l2;
+    
+    *nbr = 42;
+    n1 = *nbr / 10;
+    l1 = n1 + '0';
+    n2 = *nbr % 10;
+    l2 = n2 + '0';
+    ft_putchar(l1);
+    ft_putchar(l2);
 }
 
-int	main(void)
+int main(void)
 {
-	ft_putnbr(0);
-	return (0);
+    int a;
+
+    ft_ft(&a);
+    return (0);
 }
