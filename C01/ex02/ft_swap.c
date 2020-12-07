@@ -1,44 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_combn.c                                   :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/04 10:50:22 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/05 11:59:37 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/07 16:27:48 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/07 16:48:07 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+void	ft_swap(int *a, int *b)
 {
-	write(1, &c, 1);
-}
+	int c;
 
-void	ft_print_combn(int n)
-{
-	char x;
-
-	while (n > 0 && n <= 9) 
-	{
-		if (n == 1) // ?? //
-		{
-
-		}
-
-		else
-		{
-			/* code */
-		}
-
-		n--;
-	}
-}
-
-int	main(void)
-{
-	ft_print_combn(1);
-	return (0);
+	c = *b;
+	*b = *a;
+	*a = c;
 }

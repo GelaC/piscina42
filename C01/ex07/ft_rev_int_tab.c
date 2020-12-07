@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_combn.c                                   :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/04 10:50:22 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/05 11:59:37 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/07 17:37:33 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/07 18:44:16 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	write(1, &c, 1);
-}
+	int tab2[size];
+	int i;
+	int n;
 
-void	ft_print_combn(int n)
-{
-	char x;
-
-	while (n > 0 && n <= 9) 
+	i = 0;
+	n = size;
+	while (n > 0)
 	{
-		if (n == 1) // ?? //
-		{
-
-		}
-
-		else
-		{
-			/* code */
-		}
-
+		tab2[i] = tab[n - 1];
 		n--;
+		i++;
 	}
-}
-
-int	main(void)
-{
-	ft_print_combn(1);
-	return (0);
+	i = 0;
+	while (i < size)
+	{
+		tab[i] = tab2[i];
+		i++;
+	}
 }

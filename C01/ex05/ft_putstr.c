@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_combn.c                                   :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/04 10:50:22 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/05 11:59:37 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/07 16:51:17 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/07 17:32:39 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,14 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print_combn(int n)
+void	ft_putstr(char *str)
 {
-	char x;
+	int i;
 
-	while (n > 0 && n <= 9) 
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (n == 1) // ?? //
-		{
-
-		}
-
-		else
-		{
-			/* code */
-		}
-
-		n--;
+		ft_putchar(str[i]);
+		i++;
 	}
-}
-
-int	main(void)
-{
-	ft_print_combn(1);
-	return (0);
 }

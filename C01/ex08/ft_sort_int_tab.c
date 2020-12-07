@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_combn.c                                   :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/04 10:50:22 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/05 11:59:37 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/07 19:15:26 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/07 20:34:54 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+void	ft_sort_int_tab(int *tab, int size)
 {
-	write(1, &c, 1);
-}
+	int total;
+	int p;
+	int aux;
 
-void	ft_print_combn(int n)
-{
-	char x;
+	total = 0;
+	p = 0;
 
-	while (n > 0 && n <= 9) 
+	while (total < size)
 	{
-		if (n == 1) // ?? //
+		while (p < size - 1)
 		{
-
+			if (tab[p] > tab[p + 1])
+			{
+				aux = tab[p];
+				tab[p] = tab[p + 1];
+				tab[p + 1] = aux;
+			}
+			p++;
 		}
-
-		else
-		{
-			/* code */
-		}
-
-		n--;
+		p = 0;
+		total++;
 	}
-}
-
-int	main(void)
-{
-	ft_print_combn(1);
-	return (0);
 }

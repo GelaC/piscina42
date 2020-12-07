@@ -1,49 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pelultima_cl.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 19:22:26 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/04 14:51:17 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/07 17:06:01 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/07 18:44:49 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ftputchar(char c)
+int	ft_strlen(char *str)
 {
-	write(1, &c, 1);
-}
+	int i;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		ftputchar('-');
-		ftputchar('2');
-		ft_putnbr(147483648);
+		i++;
 	}
-	else
-	{
-		if (nb < 0)
-		{
-			ftputchar('-');
-			nb = -nb;
-		} 
-		if (nb < 10)
-			ftputchar(nb + '0');
-		else
-		{
-			ft_putnbr(nb / 10);
-			ft_putnbr(nb % 10);
-		}
-	}
-}
-
-int	main(void)
-{
-	ft_putnbr(0);
-	return (0);
+	return (i);
 }

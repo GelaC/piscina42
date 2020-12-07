@@ -1,44 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_combn.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/04 10:50:22 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/05 11:59:37 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/07 16:20:55 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/07 17:25:44 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
 
-void	ft_putchar(char c)
+int		main(void)
 {
-	write(1, &c, 1);
-}
+	str[12] = 'abdkdkdkdks';
 
-void	ft_print_combn(int n)
-{
-	char x;
-
-	while (n > 0 && n <= 9) 
-	{
-		if (n == 1) // ?? //
-		{
-
-		}
-
-		else
-		{
-			/* code */
-		}
-
-		n--;
-	}
-}
-
-int	main(void)
-{
-	ft_print_combn(1);
+	ft_putstr(str);
 	return (0);
 }
