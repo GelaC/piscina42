@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/07 20:38:21 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/08 19:40:42 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/08 20:43:35 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/08 21:20:46 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strupcase(char *str)
 {
 	int i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = str[i] - 32;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (str);
 }

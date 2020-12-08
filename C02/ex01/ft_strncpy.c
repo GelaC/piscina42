@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/07 20:38:21 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/08 19:40:42 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/08 12:58:46 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/08 19:39:41 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (i < n)
 	{
-		dest[i] = src[i];
+		if (src[i] != '\0')
+			dest[i] = src[i];
+		else
+			dest[i] = '\0';
 		i++;
 	}
 	dest[i] = '\0';

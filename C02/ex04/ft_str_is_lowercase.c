@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/07 20:38:21 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/08 19:40:42 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/08 18:31:33 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/08 19:40:03 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+int		ft_str_is_lowercase(char *str)
 {
 	int i;
+	int r;
 
 	i = 0;
-	while (src[i] != '\0')
+	r = 1;
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		if (str[i] > 'z' || str[i] < 'a')
+			r = 0;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (r);
 }

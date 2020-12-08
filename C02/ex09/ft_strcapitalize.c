@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/07 20:38:21 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/08 19:40:42 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/08 21:32:24 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/08 21:56:39 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcapitalize(char *str)
 {
 	int i;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		if ((str[i] >= 'a' && str[i] <= 'z') &&
+		(str[i - 1] == ' ' || i == 0 ||
+		(str[i - 1] > 33 && str[i - 1] < 47) ||
+		(str[i - 1] > 58 && str[i - 1] < 64) ||
+		(str[i - 1] > 91 && str[i - 1] < 96) ||
+		(str[i - 1] > 123 && str[i - 1] < 126)))
+			str[i] = str[i] - 32;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (str);
 }
