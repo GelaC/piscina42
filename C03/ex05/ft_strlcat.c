@@ -1,52 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/07 16:20:55 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/08 19:26:33 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/13 21:10:47 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/13 21:13:28 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-int		main(void)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int a;
-	int *p;
+	unsigned int i;
+	unsigned int j;
 
-	a = 0;
-	p = &a;
-	ft_ft(p);
-
-	printf("%d", a);
-
-
-	return (0);
-}
-
-
-
-
-int		main(void)
-{
-	char lis1[] = "";
-
-	printf("%d", ft_str_is_lowercase(lis1));
-	return (0);
-}
-
-
-
-int	main()
-{
-	char l01[5] = "Hola";
-	char l02[5];
-	
-	ft_strcpy(l02, l01);
-	printf("%s", l02);
-	return 0;
+	i = 0;
+	j = 0;
+	if (size > 0)
+	{
+		while (i < size && dest[i] != '\0')
+		{
+			i++;
+		}
+		while (i < size && src[j] != '\0')
+		{
+			dest[i] = src[j];
+			i++;
+			j++;
+		}
+		dest[i] = '\0';
+	}
+	return (i);
 }

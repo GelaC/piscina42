@@ -1,55 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/10 20:46:08 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/12 21:16:53 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/13 19:53:09 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/13 21:08:40 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	unsigned int i;
-	unsigned int r;
-	int k;
-	int l;
-	char *res;
+	int i;
+	int f;
 
 	i = 0;
-	r = 0;
-	while (to_find[r] != '\0')
-	{
-		r++;
-	}
+	if (to_find[i] == '\0')
+		return (str);
 	while (str[i] != '\0')
 	{
-		if (str[i] == to_find[0])
+		f = 0;
+		while (str[i + f] == to_find[f])
 		{
-			k = 0;
-			l = 0;
-			while (k <= r)
-			{
-				if (str[l] == to_find[k])
-				{
-					k++;
-					l++;
-				}
-			}
-			if (k == r)
-				*res = str[i];
+			if (to_find[f + 1] == '\0')
+				return (&str[i]);
+			f++;
 		}
 		i++;
 	}
-	if (r == 0)
-		return (0);
-	else
-		return (str);
+	return (00);
 }
-
-//   If needle is an empty string, haystack is returned; if needle occurs nowhere in haystack, NULL is returned; other-
-//    wise a pointer to the first character of the first occurrence of needle is returned.
-//  Devuelve en punto en que empieza la repetición
-//  
