@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/10 14:06:34 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/14 22:13:34 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/14 17:30:11 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/14 17:48:33 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-int	ft_strcmp(char *s1, char *s2);
-
-int	main(void)
+int	ft_iterative_power(int nb, int power)
 {
-	char lis1[] = "dfgfgsf";
-	char lis2[] = "fstydfghdfgsr";
+	int n;
+	int i;
 
-	printf("%d\n", ft_strcmp(lis1, lis2));
-	printf("%d bueno\n", strcmp(lis1, lis2));
-	return (0);
+	i = 0;
+	n = 1;
+	if (power < 0)
+		return (0);
+	while (power >= 1)
+	{
+		n = nb * n;
+		power--;
+	}
+	return (n);
 }

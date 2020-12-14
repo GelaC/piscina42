@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/10 14:06:34 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/14 22:13:34 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/14 18:02:18 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/14 19:22:32 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-int	ft_strcmp(char *s1, char *s2);
-
-int	main(void)
+int	ft_recursive_power(int nb, int power)
 {
-	char lis1[] = "dfgfgsf";
-	char lis2[] = "fstydfghdfgsr";
-
-	printf("%d\n", ft_strcmp(lis1, lis2));
-	printf("%d bueno\n", strcmp(lis1, lis2));
-	return (0);
+	if (power == 0 || (nb < 0 && power == 0))
+		return (1);
+	else if (nb == 0 && power != 0)
+		return (0);
+	else
+		return (nb * ft_recursive_power(nb, power - 1));
 }

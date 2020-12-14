@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/10 14:06:34 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/14 22:13:34 by acebrian         ###   ########.fr       */
+/*   Created: 2020/12/14 19:19:52 by acebrian          #+#    #+#             */
+/*   Updated: 2020/12/14 20:25:05 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-
-int	ft_strcmp(char *s1, char *s2);
-
-int	main(void)
+int	ft_fibonacci(int index)
 {
-	char lis1[] = "dfgfgsf";
-	char lis2[] = "fstydfghdfgsr";
+	int i[index];
+	int p;
 
-	printf("%d\n", ft_strcmp(lis1, lis2));
-	printf("%d bueno\n", strcmp(lis1, lis2));
-	return (0);
+	i[0] = 0;
+	i[1] = 1;
+	p = 2;
+	while (p <= index)
+		i[p] = i[p - 1] + i[p - 2];
+	if (index < 0)
+		return (-1);
+	else
+		return (ft_fibonacci(i[index]));
 }

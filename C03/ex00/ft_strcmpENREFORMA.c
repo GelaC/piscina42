@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcmpENREFORMA.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 13:14:22 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/10 14:12:42 by acebrian         ###   ########.fr       */
+/*   Updated: 2020/12/14 22:25:04 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	unsigned int	i;
-	unsigned int	j;
-	int				f;
+	int	i;
 
 	i = 0;
-	j = 0;
-	f = 0;
-	while (s1[i] != '\0')
-	{
+	while (s1[i] != '\0' && s1[i] == s2[i])
 		i++;
-	}
-	while (s2[j] != '\0')
-	{
-		j++;
-	}
-	f = i - j;
-	return (f);
+	return (i - j);
 }
