@@ -6,7 +6,7 @@
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 20:33:09 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/10 20:43:18 by acebrian         ###   ########.fr       */
+/*   Updated: 2020/12/15 18:29:31 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,11 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	{
 		i++;
 	}
-	while (j < nb && src[j] != '\0')
+	while ((i + j) < nb && src[j] != '\0')
 	{
-		dest[i] = src[j];
-		i++;
+		dest[i + j] = src[j];
 		j++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	dest[i + j] = '\0';
+	return (i + j);
 }

@@ -6,7 +6,7 @@
 /*   By: acebrian <acebrian@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 13:14:22 by acebrian          #+#    #+#             */
-/*   Updated: 2020/12/14 22:25:04 by acebrian         ###   ########.fr       */
+/*   Updated: 2020/12/15 12:21:28 by acebrian         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_strcmp(char *s1, char *s2)
 	int	i;
 
 	i = 0;
-	while (s1[i] != '\0' && s1[i] == s2[i])
+	while (s1[i] != '\0' && s1[i] == s2[i]) //
 		i++;
-	return (i - j);
+	return (s1[i] - s2[i]);
 }
