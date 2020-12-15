@@ -6,7 +6,7 @@ CLEAN = rm -f
 CC = cc
 
 all:	$(OBJ)
-	$(CC) $(FLAGS) -o $(NAME)
+	$(CC) $(FLAGS) -o $(NAME) $(OBJ)
 clean:
 	$(CLEAN) $(NAME)
 fclean:	clean
